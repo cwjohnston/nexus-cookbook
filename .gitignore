@@ -6,3 +6,5 @@ VERSION
 /.project
 .kitchen/
 .kitchen.local.yml
+tmp
+.librarian
