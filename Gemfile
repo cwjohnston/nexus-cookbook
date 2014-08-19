@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
+gem 'librarian-chef'
 gem 'thor-scmversion', '~> 1.0.1'
-gem 'berkshelf'
 gem 'thor'
 gem 'thor-foodcritic'
 gem 'chef'
