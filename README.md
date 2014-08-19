@@ -1,13 +1,12 @@
 Description
 ===========
 
-Installs and configures Sonatype Nexus. Can optionally configure and install an nginx installation or provide
-SSL access to the Jetty server that runs Nexus.
+Installs and configures Sonatype Nexus. This cookbook is an opinionated fork of [RiotGames/nexus-cookbook](https://github.com/RiotGames/nexus-cookbook).
 
 Requirements
 ============
 
-Platform: 
+Platform:
 
 * Ubuntu
 * CentOS
@@ -15,7 +14,6 @@ Platform:
 The following cookbooks are dependencies:
 
 * java
-* nginx
 * artifact
 
 Recipes
@@ -23,7 +21,6 @@ Recipes
 
 * default - the recipe you want in your run-list. Configures a system and installs a Nexus server.
 * app - the core recipe used for installing the Nexus server.
-* nginx - add this recipe to your run-list when you want nginx installed and configured to proxy the Nexus server.
 * cli - installs packages at compilation time and uses `chef_gem` to instal the nexus_cli gem. Primarily used by the LWRPs of this cookbook.
 
 
@@ -40,14 +37,14 @@ will be used to reflect the version in the downloads URL.
 Data Bags
 =========
 
-As of version 2.0.0, this cookbook now uses fewer, more standardized Encrypted Data Bags. Following the style used 
+As of version 2.0.0, this cookbook now uses fewer, more standardized Encrypted Data Bags. Following the style used
 at Riot, Data bags are created per Chef Environment and default to a data bag item named "_wildcard" if there is no environmental
-data bag item. 
+data bag item.
 
 For version 2.0.0, the data bag has been revised to only include the credentials, and license elements.
 
 Below is how you should create your data bags for using this cookbook:
-    
+
     knife data bag create nexus _wildcard -c your/chef/config --secret-file your/encrypted_data_bag_key
 
     {
