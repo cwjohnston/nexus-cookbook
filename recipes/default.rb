@@ -20,4 +20,3 @@
 
 include_recipe "nexus::cli"
 include_recipe "nexus::app"
-include_recipe "nexus::app_server_proxy"
