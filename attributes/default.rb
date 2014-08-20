@@ -34,13 +34,13 @@ else
   default['java']['openjdk_packages'] = ["openjdk-#{node['java']['jdk_version']}-jdk"]
 end
 
-default[:nexus][:version]                                      = '2.9.0-05'
+default[:nexus][:version]                                      = '2.8.0-05'
 default[:nexus][:base_dir]                                      = '/'
 default[:nexus][:user]                                         = 'nexus'
 default[:nexus][:group]                                        = 'nexus'
-default[:nexus][:external_version]                             = '2.9.0'
+default[:nexus][:external_version]                             = '2.8.0'
 default[:nexus][:url]                                          = "http://www.sonatype.org/downloads/nexus-#{node[:nexus][:external_version]}-bundle.tar.gz"
-default[:nexus][:checksum]                                     = 'd1beec847697096cc87c19721d3200f0db57b3279fe9452dacc0dbd37a4a4f27'
+default[:nexus][:checksum]                                     = '9ccec9856922d2e5d4942feb9f7cdc8f73e75c79583e50b816650a02eff7045d'
 
 default[:nexus][:port]                                         = '8081'
 default[:nexus][:host]                                         = '0.0.0.0'
