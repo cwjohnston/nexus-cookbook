@@ -212,11 +212,8 @@ class Chef
         end
 
         def encrypted_data_bag_item(node, data_bag, data_bag_item)
-          if node[:nexus][:use_chef_vault]
-            item = ChefVault::Item.load(data_bag, data_bag_item)
-          else
-            item = Chef::EncryptedDataBagItem.load(data_bag, data_bag_item)
-          end
+          item = Chef::EncryptedDataBagItem.load(data_bag, data_bag_item)
+
           Mash.from_hash(item.to_hash)
         rescue Net::HTTPServerException => e
           nil
@@ -225,10 +222,6 @@ class Chef
         # it reports this as Chef::Exceptions::ValidationFailed exception.
         # Adding a different rescue block if things exception needs to be handled differently
         rescue Chef::Exceptions::ValidationFailed => e
-          nil
-
-        # if you are using vault and if data bag it not present we need to handle that exception as well
-        rescue ChefVault::Exceptions::KeysNotFound
           nil
         end
     end

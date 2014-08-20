@@ -1,9 +1,10 @@
 .DS_Store
-Berksfile.lock
+Cheffile.lock
 Gemfile.lock
-.vagrant
-cookbooks/
-data_bags/
 *.sw[op]
 VERSION
 /.project
+.kitchen/
+.kitchen.local.yml
+tmp
+.librarian
